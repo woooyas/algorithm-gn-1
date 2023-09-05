@@ -26,5 +26,10 @@ public class Main    {
 
         return score;
     }
+
+    public static String solution(double input) {
+
+        return null;
+    }
 }
 
