@@ -38,4 +38,8 @@ public class Main {
 
         return false;
     }
+
+    public static int solution(String input) {
+        return null;
+    }
 }
