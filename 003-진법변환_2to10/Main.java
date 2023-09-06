@@ -27,7 +27,7 @@ public class Main {
             System.out.println("Test Case " + (i + 1) + " = " + test(TEST_CASE_KEYS[i], TEST_CASE_VALUES[i]));
         }
 
-        System.out.printf("정답률 = %.3f%%", (correct / TEST_CASE_KEYS.length * 100));
+        System.out.printf("정답률 = %.3f%%%n", (correct / TEST_CASE_KEYS.length * 100));
     }
 
     private static boolean test(String input, Integer result) {
@@ -38,4 +38,19 @@ public class Main {
 
         return false;
     }
+
+     public static int solution(String input) {
+        char[] inputArr = input.toCharArray();
+        int result = 0;
+        for (int i = 0; i < inputArr.length; i++) {
+            int quotient = inputArr.length - 1 - i;
+            int num = inputArr[i] - '0';
+            // int num = Character.getNumericValue(inputArr[i]);
+            if (num == 1) {
+                result += Math.pow(2, quotient);
+            }
+        }
+        return result;
+    }
+
 }
