@@ -48,4 +48,8 @@ public class Main {
         }
         return false;
     }
+
+    public static int[][] solution(int input) {
+        return null;
+    }
 }
