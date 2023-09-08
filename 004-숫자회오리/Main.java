@@ -49,7 +49,57 @@ public class Main {
         return false;
     }
 
-    public static int[][] solution(int input) {
-        return null;
+  private static int[][] solution(int input) {
+        int[][] result = new int[input][input];
+
+        int row = 0;
+        int col = 0;
+        int num = 1;
+        int maxRow = input-1;
+        int maxCol = input-1;
+        int minRow = 0;
+        int minCol = 0;
+
+        while (num <= input * input) {
+            // 오른쪽
+            for (; col <= maxCol && result[row][col] == 0; col++) {
+                result[row][col] = num;
+                num++;
+            }
+            col--;
+            row++;
+            minRow++;
+    
+            // 아래
+            for (; row <= maxRow && result[row][col] == 0; row++) {
+                result[row][col] = num;
+                num++;
+            }
+            row--;
+            col--;
+            maxCol--;
+    
+            // 왼쪽
+            for (; col >= minCol && result[row][col] == 0; col--) {
+                result[row][col] = num;
+                num++;
+            }
+            col++;
+            row--;
+            maxRow--;
+    
+            // 위쪽
+            for (; row >= minRow && result[row][col] == 0; row--) {
+                result[row][col] = num;
+                num++;
+            }
+            row++;
+            col++;
+            minCol++;
+        }
+        return result;
+
     }
+
+    
 }
